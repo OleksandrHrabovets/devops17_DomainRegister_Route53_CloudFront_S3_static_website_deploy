@@ -23,7 +23,7 @@ jobs:
       - name: Collect status
         id: collect_status
         run: |
-          echo "DEPLOY_STATUS=$([[ '${{ steps.apply.outcome }}' == 'success' ]] && echo '✅ Success' || echo '❌ Failed')" >> $GITHUB_ENV
+          echo "DEPLOY_STATUS=$([[ '${{ steps.apply.outcome }}' == 'upload: public/index.html to s3://awsdevops.click/index.html' ]] && echo '✅ Success' || echo '❌ Failed')" >> $GITHUB_ENV
 
       - name: Send Telegram Notification
         if: always()
